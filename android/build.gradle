@@ -1,0 +1,27 @@
+buildscript {
+    ext {
+        buildToolsVersion = "35.0.0"
+        minSdkVersion = 28
+        compileSdkVersion = 36
+        targetSdkVersion = 36
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "2.0.21"
+        // Align play-services-location across react-native-maps and
+        // react-native-geolocation-service. Without this, geolocation-service
+        // compiles against the old 19.x (FusedLocationProviderClient = class)
+        // while maps pulls 21.x (it's an interface) -> IncompatibleClassChangeError
+        // at runtime the first time a screen requests location.
+        playServicesLocationVersion = "21.3.0"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:8.12.0")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"

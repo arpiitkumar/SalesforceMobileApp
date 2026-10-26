@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Globus brand palette: royal blue + antique gold on warm cream -->
+    <color name="aabl_ink">#13265C</color>
+    <color name="globus_navy">#1E3A8A</color>
+    <color name="aabl_gold">#C9A24D</color>
+    <color name="aabl_gold_dark">#A67C2E</color>
+    <color name="aabl_offwhite">#FBF8F1</color>
+</resources>

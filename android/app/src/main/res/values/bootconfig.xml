@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="remoteAccessConsumerKey">3MVG9gl7ph1Px3YZglTaz2YCTaXQ9kmA4KVMV2ztdqsftpzfV.HzH05BPfbiaE7i8l4mfnqk6ch2.89Ji9WgO</string>
+    <string name="oauthRedirectURI">com.example.salesforcemobileapp://oauth/callback</string>
+</resources>

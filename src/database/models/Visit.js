@@ -1,0 +1,171 @@
+import { Model } from "@nozbe/watermelondb";
+import { field } from "@nozbe/watermelondb/decorators";
+
+export default class Visit extends Model {
+  static table = "Visit";
+
+  @field("Sf_Id") sfId;
+
+  @field("Name") name;
+  @field("SoftDelete") softDelete;
+  @field("Beat__c") beat;
+  @field("CheckInBase64") base64;
+  @field("BeatDay__c") beatDay;
+  @field("VisitDate__c") visitDate;
+  @field("AccountId__c") accountId;
+  @field("PJPOutlet__c") pjpOutlet;
+  @field("NonPjpOutlet__c") nonPjpOutlet;
+  @field("VisitStatus__c") visitStatus;
+  @field("VisitNotes__c") visitNotes;
+  @field("CheckInTime__c") checkIn;
+  @field("CheckOutTime__c") checkOut;
+  @field("ProductiveCall__c") isProductive;
+  @field("TimeSpentOnOutlet__c") timeSpentOnOutlet;
+  @field("CheckInComment__c") checkinCmt;
+  @field("CheckInLocation__c") checkInLocation;
+  @field("CheckInLocation__Longitude__s") checkInLocationLongitude;
+  @field("CheckInLocation__Latitude__s") checkInLocationLatitude;
+  @field("CheckOutLocation__Longitude__s") checkOutLocationLongitude;
+  @field("CheckOutLocation__Latitude__s") checkOutLocationLatitude;
+  @field("CheckOutLocation__c") checkOutLocation;
+  @field("DistanceTravelledKm__c") distanceKM;
+  @field("Before12Noon__c") before12;
+  @field("Before3PM__c") before3;
+  @field("Before6PM__c") before6;
+  @field("After6PM__c") after6;
+  @field("VisitType__c") visitType;
+  @field("AdHocVisit__c") isAdhoc;
+  @field("CheckInPhotoCaptured__c") checkInPhoto;
+  @field("IsOrderPlaced__c") orderPlaced;
+  @field("OriginalMTPType__c") originalMtpType;
+  @field("OriginalDBName__c") originalDbName;
+  @field("OriginalRepName__c") originalRepName;
+  @field("RevisedMTPType__c") revisedMtpType;
+  @field("RevisedDBName__c") revisedDbName;
+  @field("RevisedRepName__c") revisedRepName;
+  @field("MTPEditDate__c") mtpEditDate;
+  @field("MTPEditTime__c") mtpEditTime;
+  @field("ApprovedBy__c") approvedBy;
+  @field("ApprovalDate__c") approvalDate;
+  @field("Status__c") status;
+  @field("SRTransactionTime__c") srTransactionTime;
+  @field("SRTransactionLocation__Longitude__s") srTransactionLocationLongtitude;
+  @field("SRTransactionLocation__Latitude__s") srTransactionLocationLatitude;
+  @field("LocationVarianceOLtoSCA__c") locVarOlToSca;
+  @field("LocationVarianceOrdertoSCA__c") locVarOrderToSca;
+  @field("PlannedVisitStartTime") plannedVisitStartTime;
+  @field("PlaceId__c") placeId;
+  @field("FirstCallVisit__c") firstCallVisit;
+  @field("LastCallVisit__c") lastCallVisit;
+  @field("ChangedBeatOutlet__c") changedBeatOutlet;
+  @field("NonProductiveCallReason__c") non_Productive_Call_Reason__c;
+  @field("AdHocReason__c") ad_Hoc_Reason__c;
+  @field("DB_SUB_DB_Super_Name__c") dB_SUB_DB_Super_Name__c;
+  @field("WorkingWith__c") working_With__c;
+  @field("Add_New_Retailer_Visit__c") add_New_Retailer_Visit__c;
+  @field("Postman_Call__c") postman_Call__c;
+  @field("Appropriate_Call__c") appropriate_Call__c;
+  @field("Inappropriate_Call__c") inappropriate_Call__c;
+
+  @field("MTP_Admin_Approval_Status__c") mTP_Admin_Approval_Status__c;
+  @field("MTP_Approval_Comment__c") mTP_Approval_Comment__c;
+  @field("MTP_ApprovalSubmitedDate__c") mTP_ApprovalSubmitedDate__c;
+  @field("MTP_Approved_Date__c") mTP_Approved_Date__c;
+
+  @field("is_locally_changed") isLocallyChanged;
+  @field("operation_type") operationType;
+  @field("last_modified") lastModified;
+  @field("is_synced") isSynced;
+  @field("sync_status") syncStatus;
+  @field("Mobile_Unique_Id__c") mobile_Unique_Id__c;
+  @field("Device_Id__c") device_Id__c;
+  @field("PlannedVisitStartTime__c") plannedVisitStartTime__c;
+  @field("PlannedVisitEndTime__c") plannedVisitEndTime__c;
+  @field("Joint_Visit_User_Validated__c") jointVisitUserValidated;
+  @field("Missing_Outlet_Reason__c") missing_Outlet_Reason__c;
+
+  static columns = {
+    sfId: "Sf_Id",
+    name: "Name",
+    softDelete: "SoftDelete",
+    jointVisitUserValidated: "Joint_Visit_User_Validated__c",
+    missing_Outlet_Reason__c: "Missing_Outlet_Reason__c",
+    base64: "CheckInBase64",
+    beat: "Beat__c",
+    beatDay: "BeatDay__c",
+    visitDate: "VisitDate__c",
+    accountId: "AccountId__c",
+    pjpOutlet: "PJPOutlet__c",
+    nonPjpOutlet: "NonPjpOutlet__c",
+    visitStatus: "VisitStatus__c",
+    visitNotes: "VisitNotes__c",
+    checkIn: "CheckInTime__c",
+    checkOut: "CheckOutTime__c",
+    isProductive: "ProductiveCall__c",
+    timeSpentOnOutlet: "TimeSpentOnOutlet__c",
+    checkinCmt: "CheckInComment__c",
+    checkInLocation: "CheckInLocation__c",
+    checkInLocationLongitude: "CheckInLocation__Longitude__s",
+    checkInLocationLatitude: "CheckInLocation__Latitude__s",
+    checkOutLocationLongitude: "CheckOutLocation__Longitude__s",
+    checkOutLocationLatitude: "CheckOutLocation__Latitude__s",
+    checkOutLocation: "CheckOutLocation__c",
+    distanceKM: "DistanceTravelledKm__c",
+    before12: "Before12Noon__c",
+    before3: "Before3PM__c",
+    before6: "Before6PM__c",
+    after6: "After6PM__c",
+    visitType: "VisitType__c",
+    isAdhoc: "AdHocVisit__c",
+    checkInPhoto: "CheckInPhotoCaptured__c",
+    orderPlaced: "IsOrderPlaced__c",
+    originalMtpType: "OriginalMTPType__c",
+    originalDbName: "OriginalDBName__c",
+    originalRepName: "OriginalRepName__c",
+    revisedMtpType: "RevisedMTPType__c",
+    revisedDbName: "RevisedDBName__c",
+    revisedRepName: "RevisedRepName__c",
+    mtpEditDate: "MTPEditDate__c",
+    mtpEditTime: "MTPEditTime__c",
+    approvedBy: "ApprovedBy__c",
+    approvalDate: "ApprovalDate__c",
+    status: "Status__c",
+    srTransactionTime: "SRTransactionTime__c",
+    srTransactionLocationLatitude: "SRTransactionLocation__Latitude__s",
+    srTransactionLocationLongtitude: "SRTransactionLocation__Longitude__s",
+    locVarOlToSca: "LocationVarianceOLtoSCA__c",
+    plannedVisitStartTime: "PlannedVisitStartTime",
+    placeId: "PlaceId__c",
+    firstCallVisit: "FirstCallVisit__c",
+    lastCallVisit: "LastCallVisit__c",
+    changedBeatOutlet: "ChangedBeatOutlet__c",
+    locVarOrderToSca: "LocationVarianceOrdertoSCA__c",
+    non_Productive_Call_Reason__c: "NonProductiveCallReason__c",
+    ad_Hoc_Reason__c: "AdHocReason__c",
+    dB_SUB_DB_Super_Name__c: "DB_SUB_DB_Super_Name__c",
+    working_With__c: "WorkingWith__c",
+    add_New_Retailer_Visit__c: "Add_New_Retailer_Visit__c",
+    postman_Call__c: "Postman_Call__c",
+    appropriate_Call__c: "Appropriate_Call__c",
+    inappropriate_Call__c: "Inappropriate_Call__c",
+
+    mTP_Admin_Approval_Status__c: "MTP_Admin_Approval_Status__c",
+    mTP_Approval_Comment__c: "MTP_Approval_Comment__c",
+    mTP_ApprovalSubmitedDate__c: "MTP_ApprovalSubmitedDate__c",
+    mTP_Approved_Date__c: "MTP_Approved_Date__c",
+
+    isLocallyChanged: "is_locally_changed",
+    operationType: "operation_type",
+    lastModified: "last_modified",
+    isSynced: "is_synced",
+    syncStatus: "sync_status",
+    mobile_Unique_Id__c: "Mobile_Unique_Id__c",
+    device_Id__c: "Device_Id__c",
+    errorMsg: "ErrorMsg",
+    recordType: "RecordType",
+    plannedVisitStartTime__c: "PlannedVisitStartTime__c",
+    plannedVisitEndTime__c: "PlannedVisitEndTime__c",
+  };
+
+  @field("ErrorMsg") errorMsg;
+}
