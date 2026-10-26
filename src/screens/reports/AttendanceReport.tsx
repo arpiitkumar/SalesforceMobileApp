@@ -26,7 +26,7 @@ const OPTIONAL_FIELDS = [
   { key: 'leaveDuration', label: 'Leave Duration' },
   { key: 'reason', label: 'Reason' },
   { key: 'plannedOutlets', label: 'Planned Outlets' },
-  { key: 'totalCalls', label: 'Total Calls' },
+  { key: 'totalCalls', label: 'Total Visits' },
   { key: 'travelDistance', label: 'Travel Distance (km)' },
 ];
 
@@ -107,7 +107,7 @@ const SRAttendanceScreen = () => {
         });
       }
 
-      // Get BeatDay data and Visit counts for Planned Outlets, Total Calls, Travel Distance
+      // Get BeatDay data and Visit counts for Planned Outlets, Total Visits, Travel Distance
       let beatDayMap = {};
       let visitCountByDate = {};
       if (isMerch) {

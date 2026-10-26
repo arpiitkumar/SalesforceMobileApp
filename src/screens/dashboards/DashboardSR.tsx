@@ -2222,7 +2222,7 @@ const DashboardSR: FC = () => {
                   <View style={dashboardStyles.callSummaryIconWrap}>
                     <Ionicons name="stats-chart" size={17} color="#C9A24D" />
                   </View>
-                  <Text style={dashboardStyles.callSummaryTitle}>Call Summary</Text>
+                  <Text style={dashboardStyles.callSummaryTitle}>Visit Summary</Text>
                 </View>
                 <View style={dashboardStyles.callSummaryHeaderRight}>
                   <Text style={dashboardStyles.callSummaryViewAll}>View Details</Text>
@@ -2233,10 +2233,10 @@ const DashboardSR: FC = () => {
               <View style={dashboardStyles.callSummaryDivider} />
 
               <View style={dashboardStyles.callSummaryMetricsRow}>
-                {/* Total Calls */}
+                {/* Total Visits */}
                 <View style={dashboardStyles.callSummaryMetricItem}>
                   <Text style={dashboardStyles.callSummaryMetricValue} numberOfLines={1} adjustsFontSizeToFit>{outletLength}</Text>
-                  <Text style={dashboardStyles.callSummaryMetricLabel} numberOfLines={1} adjustsFontSizeToFit>Total Calls</Text>
+                  <Text style={dashboardStyles.callSummaryMetricLabel} numberOfLines={1} adjustsFontSizeToFit>Total Visits</Text>
                 </View>
 
                 <View style={dashboardStyles.callSummaryMetricDivider} />

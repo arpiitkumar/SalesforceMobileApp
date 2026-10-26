@@ -1,3 +1,4 @@
+import { GOOGLE_API_KEY as GOOGLE_KEY } from '../secrets';
 import React, { useEffect, useState, useRef } from 'react';
 import {
     View,
@@ -194,7 +195,7 @@ const generateRandomId = () => {
     return `ACC-${ts}-${rnd}`;
 };
 
-const GOOGLE_API_KEY = 'REDACTED_SECRET';
+const GOOGLE_API_KEY = GOOGLE_KEY;
 const GEOCODE_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json';
 
 const fetchAddressDetails = async (latitude, longitude) => {

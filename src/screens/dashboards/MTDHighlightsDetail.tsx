@@ -165,7 +165,7 @@ const MTDHighlightsDetail: FC = () => {
                             list.push({
                                 id: salesRep,
                                 name: salesRep,
-                                repName: `Outlets: ${val.productiveOutlets}/${totalOutletsCovered} | Total Calls: ${val.totalCalls}`,
+                                repName: `Outlets: ${val.productiveOutlets}/${totalOutletsCovered} | Total Visits: ${val.totalCalls}`,
                                 date: `Productivity: ${pct}`,
                                 status: pct,
                             });
@@ -183,7 +183,7 @@ const MTDHighlightsDetail: FC = () => {
                             list.push({
                                 id: salesRep,
                                 name: salesRep,
-                                repName: `Total Calls: ${tc} | Productive Calls: ${pc}`,
+                                repName: `Total Visits: ${tc} | Productive Visits: ${pc}`,
                                 date: `TC: ${tc} | PC: ${pc}`,
                                 status: pct,
                             });
@@ -205,7 +205,7 @@ const MTDHighlightsDetail: FC = () => {
                             list.push({
                                 id: sfId,
                                 name: salesRep,
-                                repName: `Working Days: ${workingDays} | Total Calls: ${tc}`,
+                                repName: `Working Days: ${workingDays} | Total Visits: ${tc}`,
                                 date: `TC: ${tc} | PC: ${pc}`,
                                 status: `PC: ${pc}`,
                             });

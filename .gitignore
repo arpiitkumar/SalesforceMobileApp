@@ -81,3 +81,8 @@ android/keystores/debug.keystore
 android/app/google-services.json
 ios/GoogleService-Info.plist
 !android/app/google-services.json.template
+# Local build logs
+android/build_*.log
+
+# Local secrets (see src/secrets.example.js)
+src/secrets.js

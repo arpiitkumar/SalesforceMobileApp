@@ -1,3 +1,4 @@
+import { SF_CONSUMER_KEY, SF_CONSUMER_SECRET } from '../../secrets';
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { oauth } from "react-native-force";
@@ -22,10 +23,8 @@ export const useApiFetch = () => {
       console.log("🔄 Refreshing access token...");
       const body = new URLSearchParams({
         grant_type: "refresh_token",
-        client_id:
-          "REDACTED_SECRET",
-        client_secret:
-          "REDACTED_SECRET",
+        client_id: SF_CONSUMER_KEY,
+        client_secret: SF_CONSUMER_SECRET,
         refresh_token: refreshToken,
       }).toString();
       const response = await axios.post(

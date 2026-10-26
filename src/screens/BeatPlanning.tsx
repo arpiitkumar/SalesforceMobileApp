@@ -1,3 +1,4 @@
+import { GOOGLE_STATIC_MAPS_KEY } from '../secrets';
 import React, { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import {
   View,
@@ -1914,7 +1915,7 @@ const BeatPlanning = () => {
       "scale=2",
       `maptype=${mtype}`,
       `markers=${encodeURIComponent("color:0xC89930|" + pins)}`,
-      `key=REDACTED_SECRET`,
+      `key=${GOOGLE_STATIC_MAPS_KEY}`,
     ];
     return `https://maps.googleapis.com/maps/api/staticmap?${params.join("&")}`;
   })();

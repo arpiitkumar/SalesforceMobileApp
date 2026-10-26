@@ -1,8 +1,9 @@
+import { GOOGLE_API_KEY as GOOGLE_KEY } from '../secrets';
 // utils/reverseGeocode.js
 import axios from 'axios';
 import { InsertNSyncLog } from './InsertNSyncLog';
 
-const GOOGLE_API_KEY = 'REDACTED_SECRET';
+const GOOGLE_API_KEY = GOOGLE_KEY;
 const GEOCODE_ENDPOINT = 'https://maps.googleapis.com/maps/api/geocode/json';
 
 export const getAddressFromCoords = async (latitude, longitude) => {

@@ -471,7 +471,7 @@ const TeamCoverageDetail: FC = () => {
               </View>
               <View style={styles.statBox}>
                 <Text style={[styles.statBoxVal, { color: "#3B5BB5" }]}>{item.tc}</Text>
-                <Text style={styles.statBoxLbl}>Total Calls</Text>
+                <Text style={styles.statBoxLbl}>Total Visits</Text>
               </View>
               <View style={styles.statBox}>
                 <Text style={[styles.statBoxVal, { color: "#43A047" }]}>{item.pc}</Text>
@@ -510,11 +510,11 @@ const TeamCoverageDetail: FC = () => {
               </View>
               <View style={styles.statBox}>
                 <Text style={[styles.statBoxVal, { color: "#3B5BB5" }]}>{item.tc}</Text>
-                <Text style={styles.statBoxLbl}>Total Call</Text>
+                <Text style={styles.statBoxLbl}>Total Visit</Text>
               </View>
               <View style={styles.statBox}>
                 <Text style={[styles.statBoxVal, { color: "#43A047" }]}>{item.pc}</Text>
-                <Text style={styles.statBoxLbl}>Productive Calls</Text>
+                <Text style={styles.statBoxLbl}>Productive Visits</Text>
               </View>
             </View>
           </View>
@@ -705,7 +705,7 @@ const TeamCoverageDetail: FC = () => {
               <View style={styles.statsGrid}>
                 <View style={styles.statBox}>
                   <Text style={[styles.statBoxVal, { color: "#2E7D5B" }]}>{item.uniqueVisited}</Text>
-                  <Text style={styles.statBoxLbl}>Unique Total Call</Text>
+                  <Text style={styles.statBoxLbl}>Unique Total Visit</Text>
                 </View>
                 <View style={styles.statBox}>
                   <Text style={[styles.statBoxVal, { color: "#3B5BB5" }]}>{item.totalVisits}</Text>
@@ -776,11 +776,11 @@ const TeamCoverageDetail: FC = () => {
                   <Text style={[styles.statBoxVal, { color: "#43A047" }]}>
                     {item.uniqueOutlets}
                   </Text>
-                  <Text style={styles.statBoxLbl}>Unique Productive Call</Text>
+                  <Text style={styles.statBoxLbl}>Unique Productive Visit</Text>
                 </View>
                 <View style={styles.statBox}>
                   <Text style={[styles.statBoxVal, { color: "#3B5BB5" }]}>{item.totalCalls}</Text>
-                  <Text style={styles.statBoxLbl}>Productive Calls</Text>
+                  <Text style={styles.statBoxLbl}>Productive Visits</Text>
                 </View>
               </View>
             </View>

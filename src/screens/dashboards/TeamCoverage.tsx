@@ -1128,7 +1128,7 @@ ORDER BY AccountId__r.Name ASC`;
             {/* 5. Number of unique TC (L2) */}
             {hasRoleAccess(currentRole, L2_ROLES_ONLY) && (
               <MetricCard
-                title="Unique Total Call"
+                title="Unique Total Visit"
                 value={uniqueTcCount}
                 subtitle="Unique outlets visited"
                 icon="store-check-outline"
@@ -1137,7 +1137,7 @@ ORDER BY AccountId__r.Name ASC`;
                 onPress={() =>
                   navigation.navigate("TeamCoverageDetail", {
                     mode: "unique_tc",
-                    title: "Unique Total Call",
+                    title: "Unique Total Visit",
                     selectedPersona,
                     selectedEmployee,
                     selectedMonth: selectedMonth.format("YYYY-MM"),
@@ -1153,7 +1153,7 @@ ORDER BY AccountId__r.Name ASC`;
             {/* 6. Unique PC (L2) */}
             {hasRoleAccess(currentRole, L2_ROLES_ONLY) && (
               <MetricCard
-                title="Unique Productive Call"
+                title="Unique Productive Visit"
                 value={uniquePcCount}
                 subtitle="Productive shop spot sales"
                 icon="cart-check"
@@ -1162,7 +1162,7 @@ ORDER BY AccountId__r.Name ASC`;
                 onPress={() =>
                   navigation.navigate("TeamCoverageDetail", {
                     mode: "unique_pc",
-                    title: "Unique Productive Call",
+                    title: "Unique Productive Visit",
                     selectedPersona,
                     selectedEmployee,
                     selectedMonth: selectedMonth.format("YYYY-MM"),

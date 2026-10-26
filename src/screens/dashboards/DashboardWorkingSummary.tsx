@@ -56,7 +56,7 @@ const DashboardWorkingSummary = () => {
             <Text style={styles.statusNumber}>22</Text>
             <UpArrow width={12} height={12} />
           </View>
-          <Text style={styles.cardLabel}>Productive v/s Total Calls</Text>
+          <Text style={styles.cardLabel}>Productive v/s Total Visits</Text>
         </View>
       </View>
  

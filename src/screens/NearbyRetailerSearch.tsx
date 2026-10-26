@@ -1,3 +1,4 @@
+import { GOOGLE_API_KEY as GOOGLE_KEY } from '../secrets';
 import React, { useState } from "react";
 import axios from "axios";
 import {
@@ -114,7 +115,7 @@ export default function NearbyRetailerSearch() {
       }
 
       // 2. Fetch from Google Places Nearby Search API
-      const GOOGLE_API_KEY = 'REDACTED_SECRET';
+      const GOOGLE_API_KEY = GOOGLE_KEY;
       const limitDistKm = parseFloat(distanceKm) || 5;
       const radiusMeters = Math.round(limitDistKm * 1000);
 

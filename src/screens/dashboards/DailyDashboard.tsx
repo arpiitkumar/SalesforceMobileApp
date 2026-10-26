@@ -668,13 +668,13 @@ const DailyDashboard: FC = () => {
             {hasRoleAccess(userRole, allowedGroupA) && (
               <>
                 <MetricCard
-                  title="Total Calls (TC)"
+                  title="Total Visits (TV)"
                   value={tcCount}
                   icon="phone-in-talk"
                   color="#3B5BB5"
                   bgColor="#EFF6FF"
                   onPress={() => navigation.navigate("DailyDashboardDetail", {
-                    title: "Total Calls Details",
+                    title: "Total Visits Details",
                     metricType: "tc",
                     selectedPersona,
                     selectedEmployee,
@@ -690,13 +690,13 @@ const DailyDashboard: FC = () => {
                   })}
                 />
                 <MetricCard
-                  title="Productive Calls (PC)"
+                  title="Productive Visits (PV)"
                   value={pcCount}
                   icon="checkbox-marked-circle-outline"
                   color="#D08C1F"
                   bgColor="#FBEFD8"
                   onPress={() => navigation.navigate("DailyDashboardDetail", {
-                    title: "Productive Calls Details",
+                    title: "Productive Visits Details",
                     metricType: "pc",
                     selectedPersona,
                     selectedEmployee,

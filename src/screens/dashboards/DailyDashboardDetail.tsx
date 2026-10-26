@@ -366,7 +366,7 @@ const DailyDashboardDetail: FC = () => {
           const userVal = bdTotalCalls || subTcVisits.length || myVisits.length;
           totalVal += userVal;
         });
-        displayInfo = `${totalVal} Calls`;
+        displayInfo = `${totalVal} Visits`;
       } else if (metricType === "pc") {
         roleUsers.forEach((user: any) => {
           const userBeatDays = (rawBeatDays || []).filter((x: any) =>
@@ -678,7 +678,7 @@ const DailyDashboardDetail: FC = () => {
           Sf_Id: matchedSub?.Sf_Id || `rep-${idx}`,
           Name: repName,
           Role: matchedSub?.Role || "Sales Representative",
-          info: `${totalCalls} Calls`,
+          info: `${totalCalls} Visits`,
           subtitle: `Working Days: ${workingDays} • PC: ${productiveCalls} (${pct}%)`,
           totalCalls,
           productiveCalls,
@@ -751,7 +751,7 @@ const DailyDashboardDetail: FC = () => {
           idMatches(v.CreatedById, user.Sf_Id)
         );
         userVal = bdTotalCalls || subTcVisits.length || myVisits.length;
-        displayInfo = `${userVal} Calls`;
+        displayInfo = `${userVal} Visits`;
       } else if (metricType === "pc") {
         const empPcVisits = cleanPcVisits.filter((v) =>
           idMatches(v.BeatDay__r?.Route_Plans__r?.Assigned_To__c, user.Sf_Id) ||
@@ -1692,7 +1692,7 @@ const DailyDashboardDetail: FC = () => {
                           <Ionicons name="call" size={12} color="#3B5BB5" />
                         </View>
                         <View>
-                          <Text style={styles.statChipLabel}>Total Calls</Text>
+                          <Text style={styles.statChipLabel}>Total Visits</Text>
                           <Text style={styles.statChipValTC}>{item.totalCalls}</Text>
                         </View>
                       </View>

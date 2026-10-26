@@ -216,7 +216,7 @@ const SubEndDay = ({ onUnvisitedOutletsLoaded }) => {
             {/* 🔹 ONE ROW CARDS */}
             <View style={styles.row}>
               <Tile value={pjp} label="PJP Outlets" />
-              <Tile value={callsMade} label="PJP Calls Made" />
+              <Tile value={callsMade} label="PJP Visits Made" />
               <Tile value={nonPjp} label="Non PJP Outlets" />
             </View>
             <View style={styles.row}>

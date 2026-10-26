@@ -479,7 +479,7 @@ const DateWiseSummary: FC = () => {
     });
 
     // 3. Compute metrics values
-    // TC (Total Calls)
+    // TC (Total Visits)
     let totalCallsVal = 0;
     if (selectedEmployee !== "All") {
       const empBd = filteredBeatDays[0];
@@ -490,7 +490,7 @@ const DateWiseSummary: FC = () => {
     }
     setTc(String(totalCallsVal));
 
-    // PC (Productive Calls)
+    // PC (Productive Visits)
     let productiveCallsVal = 0;
     if (selectedEmployee !== "All") {
       const empBd = filteredBeatDays[0];
@@ -1045,14 +1045,14 @@ const DateWiseSummary: FC = () => {
                   </>
                 )}
                 <MetricCard
-                  title="Total Calls(TC)"
+                  title="Total Visits(TV)"
                   value={tc}
                   icon="phone-in-talk"
                   color="#FFB300"
                   bgColor="#FFF8E1"
                   onPress={() =>
                     navigation.navigate("DailyDashboardDetail", {
-                      title: "Total Calls Details",
+                      title: "Total Visits Details",
                       metricType: "tc",
                       selectedPersona,
                       selectedEmployee,
@@ -1069,14 +1069,14 @@ const DateWiseSummary: FC = () => {
                   }
                 />
                 <MetricCard
-                  title="Productive Calls(PC)"
+                  title="Productive Visits(PV)"
                   value={pc}
                   icon="checkbox-marked-circle-outline"
                   color="#2E7D5B"
                   bgColor="#E3F1EA"
                   onPress={() =>
                     navigation.navigate("DailyDashboardDetail", {
-                      title: "Productive Calls Details",
+                      title: "Productive Visits Details",
                       metricType: "pc",
                       selectedPersona,
                       selectedEmployee,

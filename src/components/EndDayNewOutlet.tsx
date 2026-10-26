@@ -100,7 +100,7 @@ const EndDayNewOutlet = () => {
           {/* 🔹 ONE ROW CARDS */}
           <View style={styles.row}>
             <Tile value={pjp} label="New Outlets Added" />
-            <Tile value={callsMade} label="New Outlet Productive Calls" />
+            <Tile value={callsMade} label="New Outlet Productive Visits" />
           </View>
         </>
       )}

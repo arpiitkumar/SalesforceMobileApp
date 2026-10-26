@@ -437,13 +437,13 @@ const MTDSales: FC = () => {
         const managerIdForTc = userId || "0059I00000AfB3OQAV";
         try {
           const teamTcQuery = `SELECT Owner.Name SalesRepName, OwnerId, SUM(Total_Calls__c) MonthlyTotalCalls_TC, SUM(Productive_Calls__c) MonthlyProductiveCalls_PC, COUNT(Id) TotalWorkingDays FROM Beat_Day__c WHERE Beat_Date__c >= ${startOfMonth} AND Beat_Date__c <= ${endOfMonth} AND OwnerId IN (SELECT Id FROM User WHERE Id = '${managerIdForTc}' OR ManagerId = '${managerIdForTc}' OR Manager.ManagerId = '${managerIdForTc}' OR Manager.Manager.ManagerId = '${managerIdForTc}') GROUP BY Owner.Name, OwnerId ORDER BY Owner.Name ASC`;
-          console.log("🔍 [MTDSales] Executing exact Total Calls query:", teamTcQuery);
+          console.log("🔍 [MTDSales] Executing exact Total Visits query:", teamTcQuery);
           const res = await fetchRecords("BeatDay__c", teamTcQuery);
           if (Array.isArray(res) && res.length > 0) {
             teamSummaryList = res;
           }
         } catch (err) {
-          console.warn("⚠️ Subquery failed for Total Calls Team Summary, trying fallback:", err);
+          console.warn("⚠️ Subquery failed for Total Visits Team Summary, trying fallback:", err);
           if (allUserIdsStr) {
             try {
               const fallbackQuery = `SELECT Owner.Name SalesRepName, OwnerId, SUM(Total_Calls__c) MonthlyTotalCalls_TC, SUM(Productive_Calls__c) MonthlyProductiveCalls_PC, COUNT(Id) TotalWorkingDays FROM Beat_Day__c WHERE Beat_Date__c >= ${startOfMonth} AND Beat_Date__c <= ${endOfMonth} AND OwnerId IN (${allUserIdsStr}) GROUP BY Owner.Name, OwnerId ORDER BY Owner.Name ASC`;
@@ -452,7 +452,7 @@ const MTDSales: FC = () => {
                 teamSummaryList = fallbackRes;
               }
             } catch (err2) {
-              console.warn("⚠️ Fallback query failed for Total Calls:", err2);
+              console.warn("⚠️ Fallback query failed for Total Visits:", err2);
             }
           }
         }
@@ -809,14 +809,14 @@ const MTDSales: FC = () => {
               {hasRoleAccess(userRole, group2Roles) && (
                 <>
                   <MetricCard
-                    title="Total Calls (TC)"
+                    title="Total Visits (TV)"
                     value={totalCalls}
                     icon="phone-in-talk"
                     color="#2196F3"
                     bgColor="#E3F2FD"
                     onPress={() =>
                       navigation.navigate("DailyDashboardDetail", {
-                        title: "Total Calls Details",
+                        title: "Total Visits Details",
                         metricType: "tc",
                         selectedPersona,
                         selectedEmployee,
@@ -836,14 +836,14 @@ const MTDSales: FC = () => {
                     }
                   />
                   <MetricCard
-                    title="Productive Calls (PC)"
+                    title="Productive Visits (PV)"
                     value={productiveCalls}
                     icon="checkbox-marked-circle-outline"
                     color="#9C27B0"
                     bgColor="#F3E5F5"
                     onPress={() =>
                       navigation.navigate("DailyDashboardDetail", {
-                        title: "Productive Calls Details",
+                        title: "Productive Visits Details",
                         metricType: "pc",
                         selectedPersona,
                         selectedEmployee,

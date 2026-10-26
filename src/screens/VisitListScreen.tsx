@@ -233,7 +233,7 @@ const VisitListScreen: FC = () => {
     }, [dateStore]),
   );
 
-  // Computed Metrics for Call Summary
+  // Computed Metrics for Visit Summary
   const summaryMetrics = useMemo(() => {
     const totalVisitsCount = visits.length;
     const productiveCount = visits.filter((v) => v.type === "Productive" || v.isTelephoneOrder || v.productive).length;
@@ -649,14 +649,14 @@ const VisitListScreen: FC = () => {
         >
           <Ionicons name="arrow-back" size={24} color="#FFF" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Call Summary</Text>
+        <Text style={styles.headerTitle}>Visit Summary</Text>
         <View style={{ width: 40 }} />
       </LinearGradient>
 
       {loading ? (
         <View style={styles.centerContainer}>
           <ActivityIndicator size="large" color="#C9A24D" />
-          <Text style={styles.loadingText}>Fetching Call Summary...</Text>
+          <Text style={styles.loadingText}>Fetching Visit Summary...</Text>
         </View>
       ) : (
         <FlatList

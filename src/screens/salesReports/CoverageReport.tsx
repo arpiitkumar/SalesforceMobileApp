@@ -1,4 +1,4 @@
-/** Report 1 - Outlet Coverage & Productive Call Rate (DEMO). */
+/** Report 1 - Outlet Coverage & Productive Visit Rate (DEMO). */
 import React, {useMemo, useState} from 'react';
 import {View, Text} from 'react-native';
 import moment from 'moment';
@@ -52,7 +52,7 @@ const CoverageReport = ({navigation}: any) => {
   const teamCov = useMemo(() => dailySeries(team, 14, x => x.coverage), [team]);
 
   return (
-    <ReportShell title="Outlet Coverage & Call Rate" user={user} navigation={navigation} view={view} setView={setView} period={period} setPeriod={setPeriod}>
+    <ReportShell title="Outlet Coverage & Visit Rate" user={user} navigation={navigation} view={view} setView={setView} period={period} setPeriod={setPeriod}>
       {view === 'salesman' ? (
         <>
           <Kpis
@@ -60,7 +60,7 @@ const CoverageReport = ({navigation}: any) => {
               {label: 'Outlets assigned', value: String(my.assigned)},
               {label: 'Outlets visited', value: String(my.visited)},
               {label: 'Coverage %', value: `${my.coverage}%`, color: my.coverage >= 80 ? C.green : C.red},
-              {label: 'Productive calls', value: `${my.productive}/${my.totalCalls}`},
+              {label: 'Productive visits', value: `${my.productive}/${my.totalCalls}`},
               {label: 'Strike rate', value: `${my.strike}%`, color: my.strike >= 40 ? C.green : C.red},
               {label: 'Geofence flags', value: String(my.geoFlags), color: my.geoFlags ? C.amber : C.green},
             ]}
@@ -68,7 +68,7 @@ const CoverageReport = ({navigation}: any) => {
           <ChartCard title="Coverage trend" sub="Daily coverage %, last 14 days · tap to inspect" readout={read}>
             <LineChart series={[{name: 'Coverage', color: VIZ.s1, data: covSeries.map(v => v.value)}]} labels={covSeries.map(v => v.label)} yMax={100} format={n => `${Math.round(n)}%`} refLine={{value: 80, label: '80% floor'}} onSelect={setRead} />
           </ChartCard>
-          <ChartCard title="Where my calls went" sub={PERIOD_LABEL[period]}>
+          <ChartCard title="Where my visits went" sub={PERIOD_LABEL[period]}>
             <StackedBar segments={[{label: 'Productive', value: my.productive, color: VIZ.s1}, {label: 'Visited, no sale', value: my.visited - my.productive, color: VIZ.s2}, {label: 'Not visited', value: my.assigned - my.visited, color: VIZ.gray}]} />
           </ChartCard>
           <Section title="Today's beat list" right={moment().format('ddd, DD MMM')}>
@@ -89,9 +89,9 @@ const CoverageReport = ({navigation}: any) => {
               ))}
             </Card>
           </Section>
-          <Section title="Unproductive calls" right={`${unproductive.length} shown`}>
+          <Section title="Unproductive visits" right={`${unproductive.length} shown`}>
             <Card>
-              {unproductive.length === 0 && <Empty text="No unproductive calls in this period." />}
+              {unproductive.length === 0 && <Empty text="No unproductive visits in this period." />}
               {unproductive.map((u, i) => (
                 <TableRow
                   key={i}
@@ -111,7 +111,7 @@ const CoverageReport = ({navigation}: any) => {
             items={[
               {label: 'Team coverage %', value: `${teamTotal.coverage}%`, color: teamTotal.coverage >= 80 ? C.green : C.red},
               {label: 'Team strike rate', value: `${teamTotal.strike}%`, color: teamTotal.strike >= 40 ? C.green : C.red},
-              {label: 'Calls / assigned', value: `${teamTotal.visited}/${teamTotal.assigned}`},
+              {label: 'Visits / assigned', value: `${teamTotal.visited}/${teamTotal.assigned}`},
               {label: 'Lapsed outlets (14d+)', value: String(lapsed.length), color: C.amber},
             ]}
           />

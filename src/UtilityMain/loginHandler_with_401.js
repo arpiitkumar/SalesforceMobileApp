@@ -1,3 +1,4 @@
+import { SF_CONSUMER_KEY, SF_CONSUMER_SECRET } from '../secrets';
 // auth/loginHandler.js
 import UniversalUpdateInsert from '../database/dbService/UniversalUpdateInsert';
 import { showToast } from '../redux/slices/toastSlice';
@@ -33,8 +34,8 @@ export const loginHandler = async (fetchRecords, creds) => {
 
         const body = new URLSearchParams({
           grant_type: "refresh_token",
-          client_id: "REDACTED_SECRET",
-          client_secret: "REDACTED_SECRET",
+          client_id: SF_CONSUMER_KEY,
+          client_secret: SF_CONSUMER_SECRET,
           refresh_token: refreshToken
         }).toString();
 

@@ -34,7 +34,7 @@ const SalesReportsSection = () => {
       pts: [] as number[],
     };
     return [
-      {route: 'ReportCoverage', spark: spark.cov, icon: '📍', title: 'Outlet Coverage & Call Rate', line: `${today.visited}/${today.assigned} outlets today · ${mtd.strike}% strike rate (MTD)`},
+      {route: 'ReportCoverage', spark: spark.cov, icon: '📍', title: 'Outlet Coverage & Visit Rate', line: `${today.visited}/${today.assigned} outlets today · ${mtd.strike}% strike rate (MTD)`},
       {route: 'ReportSpotSales', spark: spark.val, icon: '🧾', title: 'Spot Sales Summary', line: `${inrShort(today.value)} today · ${inrShort(mtd.value)} MTD`},
       {route: 'ReportTarget', spark: spark.tgt, icon: '🎯', title: 'Target vs Achievement', line: t && pace ? `${pct(mtd.value, t.value)}% of target · ${pace.status}` : 'No target set'},
       {route: 'ReportSku', spark: spark.cs, icon: '🥃', title: 'SKU / Brand Performance', line: `Premium mix ${pct(premium, total)}%${top ? ' · Top: ' + SKUS.find(k => k.id === top[0])!.short : ''}`},
